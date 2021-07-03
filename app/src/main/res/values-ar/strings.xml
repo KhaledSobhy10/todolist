@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">قائمة المهام</string>
+    <string name="delete_all_tasks">مسح كل المهمات</string>
+    <string name="delete_task">حذف المهمة</string>
+    <string name="edit_task">تعديل</string>
+    <string name="day_mode">وضع النهار</string>
+    <string name="night_mode">وضع الليلي</string>
+    <string name="view_details">مشاهدة المزيد</string>
+    <string name="all">الجميع</string>
+    <string name="create_new_tasks">انشاء مهمة جديدة</string>
+    <string name="topic">موضوع</string>
+    <string name="write_topic">ادخل الموضوع</string>
+    <string name="write_description">ادخل الوصف</string>
+    <string name="family">العائلة</string>
+    <string name="health">الصحة</string>
+    <string name="workout">التمارين</string>
+    <string name="working">العمل</string>
+    <string name="learning">التعلم</string>
+    <string name="select_repetition_label">اختار مرات التكرار</string>
+    <string name="once_rep">مرة</string>
+    <string name="daily_rep">يومي</string>
+    <string name="weekly_rep">اسبوعي</string>
+    <string name="select_category_label">اختار الفئة</string>
+    <string name="delete_all_data">حذف جميع البيانات</string>
+    <string name="description">الوصف</string>
+    <string name="add">اضافة</string>
+    <string name="label_edit_task">تعديل معلومات المهمة</string>
+    <string name="ttd">مهام اليوم</string>
+    <string name="select_date">اختار التاريخ</string>
+    <string name="update_task_label">تعديل المهمة</string>
+    <string name="task_completed">تمت بنجاح</string>
+    <string name="update" >تعديل</string>
+    <string name="task_incompleted">لم تتم بعد</string>
+    <string name="date">التاريخ</string>
+    <string name="delete_task_warning">حذف المهمة ؟</string>
+    <string name="ok">موافق</string>
+    <string name="cancel">الغاء</string>
+    <string name="delete_all_data_warning">حذف جميع البيانات ؟</string>
+    <string name="select_priority_label">اختار الأولوية</string>
+    <string name="high">عالية</string>
+    <string name="medium">متوسطة</string>
+    <string name="low">ضعيفة</string>
+    <string name="done_num">مكتمل %1$d</string>
+    <string name="undone_num">غير مكتمل %1$d</string>
+    <string name="all_tasks_status" >مهام : %1$d / %2$d</string>
+
+
+</resources>

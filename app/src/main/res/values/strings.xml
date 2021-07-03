@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">ToDo</string>
+    <string name="history_activity_label" translatable="false">History</string>
+    <string name="delete_all_tasks">delete all tasks</string>
+    <string name="delete_task">delete</string>
+    <string name="edit_task">edit</string>
+    <string name="history" translatable="false">history</string>
+    <string name="update">Update</string>
+    <string name="label_edit_task">Edit task info</string>
+    <string name="day_mode">Day mode</string>
+    <string name="night_mode">Night mode</string>
+    <string name="ttd">TTD</string>
+    <string name="view_details">view details</string>
+    <string name="all">All</string>
+    <string name="create_new_tasks">Create New Tasks</string>
+    <string name="topic">Topic</string>
+    <string name="write_topic">Write Topic</string>
+    <string name="write_description">Write Description</string>
+    <string name="select_priority_label">Select Priority</string>
+    <string name="add">add</string>
+    <string name="select_date">Select Date</string>
+    <string name="learning">Learning</string>
+    <string name="working">Working</string>
+    <string name="workout">Workout</string>
+    <string name="health">Health</string>
+    <string name="family">Family</string>
+    <string name="select_repetition_label">Select Repetition</string>
+    <string name="once_rep">Once</string>
+    <string name="daily_rep">Daily</string>
+    <string name="weekly_rep">Weekly</string>
+    <string name="select_category_label">Select Category</string>
+    <string name="update_task_label">Update Task</string>
+    <string name="delete_all_data">Delete all data</string>
+    <string name="progress_num" translatable="false">%1$d / %2$d</string>
+    <string name="description">description</string>
+    <string name="task_completed">Completed</string>
+    <string name="task_incompleted">InCompleted</string>
+    <string name="date">Date</string>
+    <string name="delete_task_warning">Delete task ?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_all_data_warning">Delete all data ?</string>
+    <string name="high">high</string>
+    <string name="medium">medium</string>
+    <string name="low">low</string>
+    <string name="done_num">Done %1$d </string>
+    <string name="undone_num">Undone %1$d </string>
+    <string name="completed_percent" translatable="false"> %1$d \%% </string>
+    <string name="all_tasks_status" >Tasks: %1$d / %2$d</string>
+
+
+</resources>
