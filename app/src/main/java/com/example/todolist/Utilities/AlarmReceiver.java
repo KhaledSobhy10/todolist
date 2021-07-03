@@ -14,6 +14,6 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
-        AppRepository.getInstance((Application) context.getApplicationContext()).loadDailyTasksToTasks();
+        AppRepository.getInstance((Application) context.getApplicationContext()).loadTodayTasks();
     }
 }

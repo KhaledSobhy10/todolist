@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 
 import com.example.todolist.Utilities.AppExecutor;
+import com.example.todolist.Utilities.DateUtility;
 
 import java.util.List;
 
@@ -40,7 +41,8 @@ public class AppRepository {
             if (task.getRepetition() == TasksContract.TaskEntity.DAILY_TASK) {
                 appRoomDatabase.TaskDAO().insertDailyTask(new DailyTask(task.getTaskName(), task.getStringCategory(), task.getDescription(), task.getPriority()));
             }else if (task.getRepetition() == TasksContract.TaskEntity.WEEKLY_TASK){
-
+                    String dayOfWeek = DateUtility.getDay(task.getDate());
+                     appRoomDatabase.TaskDAO().insertWeeklyTask(new WeeklyTask(task.getTaskName(), task.getDescription(),dayOfWeek, task.getCategory(), task.getPriority()));
             }
             appRoomDatabase.TaskDAO().insertTasks(task);
         });
@@ -51,8 +53,13 @@ public class AppRepository {
     public void updateTaskInDB(Task task) {
         AppExecutor.getInstance().getDiskIO().execute(() -> {
             appRoomDatabase.TaskDAO().updateTasks(task);
-            if (task.getRepetition() == TasksContract.TaskEntity.DAILY_TASK)
+            if (task.getRepetition() == TasksContract.TaskEntity.DAILY_TASK) {
                 appRoomDatabase.TaskDAO().updateDailyTasks(new DailyTask(task.getTaskName(), task.getStringCategory(), task.getDescription(), task.getPriority()));
+            }else if (task.getRepetition() == TasksContract.TaskEntity.WEEKLY_TASK){
+                String dayOfWeek = DateUtility.getDay(task.getDate());
+                appRoomDatabase.TaskDAO().updateWeeklyTask(new WeeklyTask(task.getTaskName(), task.getDescription(),  dayOfWeek, task.getCategory(), task.getPriority()));
+            }
+
         });
 
     }
@@ -101,7 +108,7 @@ public class AppRepository {
     }
 
     private boolean isThatTaskLoaded(String taskName) {
-        String result = appRoomDatabase.TaskDAO().haveThatDailyTask(taskName, getCurrentDate());
+        String result = appRoomDatabase.TaskDAO().haveThatTask(taskName, getCurrentDate());
         return result != null;
     }
 
@@ -141,6 +148,35 @@ public class AppRepository {
             if (currentStatus != null) {
                 appRoomDatabase.TaskDAO().updateStatusOfTaskInThatDate(taskName, date, currentStatus == TasksContract.TaskEntity.TASK_DONE ?
                         TasksContract.TaskEntity.TASK_UNDONE : TasksContract.TaskEntity.TASK_DONE);
+            }
+        });
+    }
+
+    public void loadTodayTasks() {
+        loadDailyTasksToTasks();
+        loadWeeklyTasksToTasks();
+    }
+
+    private void loadWeeklyTasksToTasks() {
+        AppExecutor.getInstance().getDiskIO().execute(() -> {
+
+            List<WeeklyTask> weeklyTaskList = appRoomDatabase.TaskDAO().getWeeklyTasksByDay(DateUtility.getTodayDayOfWeek());
+
+            for (WeeklyTask weeklyTask : weeklyTaskList) {
+
+                if (isThatTaskLoaded(weeklyTask.getTaskName()))
+                    continue;
+
+                Task task = new Task(weeklyTask.getTaskName()
+                        , TasksContract.TaskEntity.TASK_UNDONE
+                        , TasksContract.TaskEntity.WEEKLY_TASK
+                        , weeklyTask.getCategory()
+                        , getCurrentDate()
+                        , weeklyTask.getDescription()
+                        , weeklyTask.getPriority()
+                );
+
+                appRoomDatabase.TaskDAO().insertTasks(task);
             }
         });
     }

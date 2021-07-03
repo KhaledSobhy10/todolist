@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.todolist.R;
 import com.example.todolist.Utilities.AppExecutor;
+import com.example.todolist.Utilities.DateUtility;
 import com.example.todolist.data.AppRoomDatabase;
 import com.example.todolist.databinding.ActivityProgressBinding;
 import com.example.todolist.databinding.ActivityTestBinding;
@@ -30,6 +31,9 @@ public class testActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         testCircular();
+    //
+        DateUtility.getDay(DateUtility.getCurrentDate());
+
     }
 
     private void testCircular() {

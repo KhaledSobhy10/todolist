@@ -1,5 +1,6 @@
 package com.example.todolist.Utilities;
 
+import android.text.format.DateFormat;
 import android.util.Log;
 
 import java.text.ParseException;
@@ -61,5 +62,23 @@ public class DateUtility {
 
     }
 
+
+    public static String getDay(String stringDate) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(datePattern);
+        String dayOfTheWeek = null;
+        try {
+            Date date = simpleDateFormat.parse(stringDate);
+             dayOfTheWeek = (String) DateFormat.format("EEEE", date); // Thursday
+            Log.d("hello", "getDay: "+dayOfTheWeek);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return dayOfTheWeek;
+    }
+
+    public static String getTodayDayOfWeek() {
+      return (String) DateFormat.format("EEEE", new Date());
+    }
 
 }

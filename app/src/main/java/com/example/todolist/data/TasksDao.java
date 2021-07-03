@@ -23,12 +23,11 @@ public interface TasksDao {
     @Query("SELECT status , date FROM TASKS WHERE task_name = :taskName")
     LiveData<List<TaskProgress>> getTaskByName(String taskName);
 
-  @Query("SELECT status FROM TASKS WHERE task_name = :taskName AND date = :date")
-  Integer getStatusOfTask(String taskName,String date);
+    @Query("SELECT status FROM TASKS WHERE task_name = :taskName AND date = :date")
+    Integer getStatusOfTask(String taskName, String date);
 
-  @Query("UPDATE Tasks SET status = :newStatus WHERE task_name = :taskName AND date = :date")
-  void updateStatusOfTaskInThatDate(String taskName , String date,int newStatus);
-
+    @Query("UPDATE Tasks SET status = :newStatus WHERE task_name = :taskName AND date = :date")
+    void updateStatusOfTaskInThatDate(String taskName, String date, int newStatus);
 
 
     @Query("SELECT * FROM Tasks WHERE date = :date ORDER BY priority DESC , status ASC")
@@ -41,8 +40,7 @@ public interface TasksDao {
     List<Integer> numOfIncompleteTasks();
 
 
-
-  @Delete
+    @Delete
     void deleteTasks(Task... task);   // can delete one or more task from task table
 
     @Query("SELECT * FROM TASKS WHERE _id = :id")
@@ -77,11 +75,21 @@ public interface TasksDao {
 //    List <String> getTodayDailyTask(String todayDate);
 
     @Query("SELECT task_name FROM Tasks WHERE task_name = :taskName and date = :todayDate")
-    String haveThatDailyTask(String taskName , String todayDate);
+    String haveThatTask(String taskName, String todayDate);
 
     @Query("SELECT task_name FROM Tasks WHERE _id = :taskId")
     String getTaskNameById(int taskId);
 
     @Query("DELETE FROM daily_tasks WHERE daily_name = :taskName")
     void deleteDailyTaskByName(String taskName);
+
+
+    @Insert
+    void insertWeeklyTask(WeeklyTask task);
+
+    @Query("SELECT * FROM WeeklyTask WHERE DAY = :dayOfWeek")
+    List<WeeklyTask> getWeeklyTasksByDay(String dayOfWeek);
+
+    @Update
+    void updateWeeklyTask(WeeklyTask task);
 }
