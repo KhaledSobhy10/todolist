@@ -101,6 +101,7 @@ public class AppRepository {
 
            //Delete task from daily task  table
             appRoomDatabase.TaskDAO().deleteDailyTaskByName(taskName);
+            appRoomDatabase.TaskDAO().deleteWeeklyTaskByName(taskName);
 
             //Delete task from task table
             appRoomDatabase.TaskDAO().deleteTaskById(taskId);

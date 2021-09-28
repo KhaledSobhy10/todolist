@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/colorPurple</color>
-    <color name="colorPrimaryDark">#140A26</color>
-    <color name="colorAccent">#647AF9</color>
+    <color name="colorPurple">#5B3E96</color>
+    <color name="colorPurpleDark">#2b1567</color>
+    <color name="blue">#647AF9</color>
+
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorUnselected">#050505</color>
-    <color name="colorPurple">#5B3E96</color>
+    <color name="gray">#BDB5D3</color>
+
     <color name="colorRed">#F44336</color>
 
     <color name="colorHighPriority">@color/colorRed</color>
     <color name="colorMediumPriority">#FF9800</color>
     <color name="colorLowPriority">#F7EA7A</color>
 
+    <color name="mainFontColor">#050505</color>
+    <color name="secondaryFontColor">@color/colorWhite</color>
+    <color name="ringColor">#E0E1E1</color>
+    <color name="chipBackground">@color/gray</color>
+    <color name="chipBackgroundChecked">@color/colorWhite</color>
+    <color name="secondaryBackground">@color/colorWhite</color>
 
 
 </resources>

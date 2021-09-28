@@ -2,8 +2,6 @@ package com.example.todolist.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -33,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ActivityMainBinding binding;
     private MRecyclerViewAdapter myAdapter;
     private TaskViewModel testViewModel;
-    private final String TAG = MainActivity.class.getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,8 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (itemId == R.id.action_delete_all_data) {
                 showDeletingAllDataAlertDialog();
                 return true;
-            } else if (itemId == R.id.action_load_daily_task) {
-                testViewModel.loadDailyTasks();
+            } else if (itemId == R.id.action_load_today_task) {
+                testViewModel.loadTodayTasks();
                 return true;
             } else if (itemId == R.id.action_change_them_mode) {
                 setThemeMode(item);
@@ -94,13 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             return false;
         });
-       binding.bottomAppBar.setNavigationOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Log.d(TAG, "onClick: clicked");
-               startActivity(new Intent(MainActivity.this,testActivity.class));
-           }
-       });
+        binding.bottomAppBar.setNavigationOnClickListener(v -> startActivity(new Intent(MainActivity.this, testActivity.class)));
 
     }
 
@@ -116,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void initViews() {
         binding.fab.setOnClickListener(this);
+        setTextInSwitchModeMenu(binding.bottomAppBar.getMenu().findItem(R.id.action_change_them_mode));
     }
 
     public void setupRecyclerView() {
@@ -220,10 +212,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             AppCompatDelegate.setDefaultNightMode
                     (AppCompatDelegate.MODE_NIGHT_YES);
             menuItem.setTitle(R.string.night_mode);
-
         }
 // Recreate the activity for the theme change to take effect.
-        recreate();
+//        recreate();
+    }
+
+    private void setTextInSwitchModeMenu(MenuItem menuItem) {
+        //Set the theme mode for the restarted activity
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES)
+            menuItem.setTitle(R.string.day_mode);
+        else
+            menuItem.setTitle(R.string.night_mode);
+
     }
 }
 

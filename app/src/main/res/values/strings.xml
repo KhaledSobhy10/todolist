@@ -46,7 +46,9 @@
     <string name="done_num">Done %1$d </string>
     <string name="undone_num">Undone %1$d </string>
     <string name="completed_percent" translatable="false"> %1$d \%% </string>
-    <string name="all_tasks_status" >Tasks: %1$d / %2$d</string>
+    <string name="all_tasks_status">Tasks: %1$d / %2$d</string>
+    <string name="load_today_task">load today task</string>
+    <string name="your_success_rate">Your success rate</string>
 
 
 </resources>

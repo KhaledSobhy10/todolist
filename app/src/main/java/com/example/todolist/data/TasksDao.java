@@ -7,8 +7,6 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.todolist.Utilities.DateUtility;
-
 import java.util.List;
 
 @Dao
@@ -92,4 +90,7 @@ public interface TasksDao {
 
     @Update
     void updateWeeklyTask(WeeklyTask task);
+
+    @Query("DELETE FROM weeklytask WHERE taskName = :taskName")
+    void deleteWeeklyTaskByName(String taskName);
 }

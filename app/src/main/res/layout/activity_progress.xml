@@ -22,7 +22,6 @@
             android:padding="10dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Study task" />
@@ -35,7 +34,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/task_name_tv"
             app:mcv_selectionMode="single"
-            app:mcv_selectionColor="@color/colorAccent"
+            app:mcv_dateTextAppearance="@style/PrimaryFontStyle"
+            app:mcv_headerTextAppearance="@style/PrimaryFontStyle"
+            app:mcv_selectionColor="?colorAccent"
+            app:mcv_weekDayLabels="@style/PrimaryFontStyle"
+
             />
 
         <TextView

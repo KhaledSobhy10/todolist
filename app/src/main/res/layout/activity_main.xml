@@ -9,7 +9,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
+        android:background="?colorPrimaryDark"
         android:isScrollContainer="true"
         android:padding="10dp"
         tools:context=".ui.MainActivity">
@@ -28,10 +28,11 @@
                 style="@style/Widget.MaterialComponents.ChipGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorWhite"
                 app:selectionRequired="true"
                 app:singleLine="true"
-                app:singleSelection="true">
+                app:singleSelection="true"
+
+                >
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/all_filter_ch"
@@ -91,9 +92,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
             android:text="@string/ttd"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/secondaryFontColor"
             android:textSize="24sp"
-
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -105,7 +105,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:padding="5dp"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.476"
@@ -121,7 +120,7 @@
             android:layout_height="wrap_content"
             android:progress="1"
             android:progressBackgroundTint="@color/colorWhite"
-            android:progressTint="@color/colorAccent"
+            android:progressTint="?attr/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tdd_tv" />
@@ -130,7 +129,7 @@
             android:id="@+id/progress_num_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/secondaryFontColor"
             app:layout_constraintBottom_toTopOf="@+id/tasks_status_progress_bar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -182,7 +181,7 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:backgroundTint="@color/colorPurple"
+        app:backgroundTint="?attr/colorAccent"
         app:layout_anchor="@id/bottomAppBar"
         app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         app:srcCompat="@drawable/ic_add"

@@ -38,7 +38,7 @@ public class TaskViewModel extends AndroidViewModel {
         appRepository.deleteAllDataInDB();
     }
 
-    public void loadDailyTasks() {
-        appRepository.loadDailyTasksToTasks();
+    public void loadTodayTasks() {
+        appRepository.loadTodayTasks();
     }
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/secondaryBackground"
     android:padding="10dp">
 
     <com.google.android.material.textview.MaterialTextView
@@ -40,9 +41,9 @@
 
     <TextView
         android:id="@+id/detail_repetition_tv"
+        style="@style/PrimaryFontStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorRed"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

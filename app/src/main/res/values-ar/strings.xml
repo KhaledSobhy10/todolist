@@ -43,7 +43,9 @@
     <string name="low">ضعيفة</string>
     <string name="done_num">مكتمل %1$d</string>
     <string name="undone_num">غير مكتمل %1$d</string>
-    <string name="all_tasks_status" >مهام : %1$d / %2$d</string>
+    <string name="all_tasks_status">مهام : %1$d / %2$d</string>
+    <string name="load_today_task">تحميل مهام اليوم</string>
+    <string name="your_success_rate">معدل نجاحك في تنفيذ المهام</string>
 
 
 </resources>

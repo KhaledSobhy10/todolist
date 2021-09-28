@@ -6,14 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.testActivity">
 
-<!--    <com.github.mikephil.charting.charts.PieChart-->
-<!--        android:id="@+id/test_pie_chart"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="300dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        style="@style/PrimaryFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/your_success_rate"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ProgressBar
         android:id="@+id/test_pb"
         android:layout_width="200dp"
@@ -23,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
         app:layout_constraintVertical_bias="0.0"
         tools:progress="90" />
 
@@ -40,7 +44,7 @@
 
     <TextView
         android:id="@+id/all_tasks"
-         android:textStyle="bold"
+        android:textSize="14sp"
         style="@style/PrimaryFontStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/test_pb"
         app:layout_constraintVertical_bias="0.0"
+        android:textStyle="bold"
         tools:text="Tasks : 90/100" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
